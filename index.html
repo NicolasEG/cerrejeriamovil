@@ -1,384 +1,343 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cerrajero Móvil 24hs</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cerrajero Móvil 24hs</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
-<style>
+  <style>
+    :root{
+      --bg1:#031120;
+      --bg2:#071c31;
+      --bg3:#0a2744;
+      --panel:#0d2744;
+      --panel2:#0a2139;
+      --yellow:#f3c538;
+      --green:#10b85a;
+      --white:#fff;
+      --text:#101827;
+      --muted:#d8dfeb;
+      --shadow:0 18px 45px rgba(0,0,0,.25);
+      --container:1180px;
+    }
 
-:root{
---yellow:#f3c538;
---green:#10b85a;
---container:1180px;
---shadow:0 18px 45px rgba(0,0,0,.25);
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+    html{
+      scroll-behavior:smooth;
+    }
 
-body{
-font-family:'Inter',sans-serif;
-background:#fff;
-overflow-x:hidden;
-}
+    body{
+      font-family:'Inter',sans-serif;
+      color:var(--text);
+      background:#fff;
+      overflow-x:hidden;
+    }
 
-.container{
-width:min(var(--container), calc(100% - 48px));
-margin:auto;
-}
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
 
-img{max-width:100%;display:block}
+    img{
+      display:block;
+      max-width:100%;
+    }
 
-/* HERO */
+    .container{
+      width:min(var(--container), calc(100% - 48px));
+      margin:0 auto;
+    }
 
+   /* =========================
+       HERO
+    ========================= */
 .hero-wrap{
-position:relative;
-overflow:hidden;
-background:
-radial-gradient(circle at 16% 18%, rgba(26,98,163,.18), transparent 30%),
-radial-gradient(circle at 86% 12%, rgba(255,255,255,.05), transparent 22%),
-linear-gradient(90deg,#02101d 0%,#041727 28%,#071d33 60%,#09233f 100%);
-min-height:870px;
+  position:relative;
+  overflow:hidden;
+
+  /* IMAGEN HERO COMPLETA */
+  background:
+    linear-gradient(90deg,
+      rgba(3,16,29,.95) 0%,
+      rgba(3,16,29,.92) 18%,
+      rgba(3,16,29,.82) 36%,
+      rgba(3,16,29,.55) 52%,
+      rgba(3,16,29,.22) 66%,
+      rgba(3,16,29,0) 78%
+    ),
+    url("img/cerrajero-hero.jpg") right center / cover no-repeat;
+
+  min-height:870px;
 }
 
 .hero-wrap::before{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(
-90deg,
-rgba(3,16,29,.95) 0%,
-rgba(3,16,29,.92) 18%,
-rgba(3,16,29,.82) 36%,
-rgba(3,16,29,.55) 52%,
-rgba(3,16,29,.22) 66%,
-rgba(3,16,29,0) 78%);
-z-index:1;
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(26,98,163,.18), transparent 30%),
+    radial-gradient(circle at 86% 12%, rgba(255,255,255,.05), transparent 22%);
+  z-index:1;
+  pointer-events:none;
 }
 
+.hero-lines{
+  position:absolute;
+  right:-220px;
+  top:120px;
+  width:980px;
+  height:320px;
+  z-index:0;
+  pointer-events:none;
+  opacity:.42;
+}
+
+.hero-lines::before,
+.hero-lines::after,
+.hero-lines span::before,
+.hero-lines span::after{
+  content:"";
+  position:absolute;
+  right:0;
+  width:820px;
+  height:180px;
+  border-top:5px solid rgba(130,157,191,.28);
+  border-radius:220px 0 0 0;
+  transform:skewX(-28deg);
+}
+
+.hero-lines::before{ top:0; }
+.hero-lines::after{ top:32px; width:860px; }
+.hero-lines span::before{ top:64px; width:900px; }
+.hero-lines span::after{ top:96px; width:940px; }
+
 .hero-top{
-position:relative;
-z-index:3;
-padding-top:28px;
+  position:relative;
+  z-index:3;
+  padding-top:28px;
 }
 
 .navbar{
-display:flex;
-align-items:center;
-justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:10px;
-color:white;
-font-size:26px;
-font-weight:800;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#fff;
+  font-size:26px;
+  font-weight:800;
+  letter-spacing:-0.5px;
+}
+
+.logo-shield{
+  width:30px;
+  height:35px;
+  flex:0 0 30px;
 }
 
 .nav-center{
-display:flex;
-gap:38px;
-color:white;
-margin-left:auto;
-margin-right:24px;
+  display:flex;
+  align-items:center;
+  gap:38px;
+  color:#fff;
+  font-size:14px;
+  font-weight:600;
+  margin-left:auto;
+  margin-right:24px;
+}
+
+.nav-center a:hover{
+  color:var(--yellow);
 }
 
 .nav-phone{
-background:var(--yellow);
-padding:14px 22px;
-border-radius:8px;
-font-weight:800;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:var(--yellow);
+  color:#15202d;
+  font-size:14px;
+  font-weight:800;
+  padding:14px 22px;
+  border-radius:8px;
+  box-shadow:0 10px 25px rgba(243,197,56,.18);
 }
 
 .hero{
-position:relative;
-z-index:3;
-display:grid;
-grid-template-columns:1fr 1fr;
-align-items:center;
-padding:60px 0 120px;
+  position:relative;
+  z-index:3;
+  min-height:620px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  align-items:center;
+  padding:46px 0 120px;
+}
+
+.hero-left{
+  position:relative;
+  z-index:4;
+  padding-top:18px;
 }
 
 .hero-left h1{
-color:white;
-font-size:82px;
-font-weight:900;
-line-height:.94;
-margin-bottom:24px;
+  color:#fff;
+  font-size:82px;
+  line-height:.94;
+  font-weight:900;
+  letter-spacing:-3px;
+  margin-bottom:24px;
 }
 
-.hero-left h1 span{
-color:var(--yellow);
-display:block;
+.hero-left h1 .yellow{
+  color:var(--yellow);
+  display:block;
 }
 
 .hero-left p{
-color:white;
-font-size:22px;
-margin-bottom:32px;
+  color:#fff;
+  font-size:22px;
+  line-height:1.35;
+  font-weight:600;
+  max-width:520px;
+  margin-bottom:32px;
 }
 
 .hero-actions{
-display:flex;
-border-radius:10px;
-overflow:hidden;
-box-shadow:var(--shadow);
+  display:flex;
+  align-items:center;
+  border-radius:10px;
+  overflow:hidden;
+  width:max-content;
+  box-shadow:var(--shadow);
+  margin-bottom:18px;
 }
 
 .btn-call,
 .btn-wa{
-height:70px;
-min-width:240px;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:12px;
-font-size:20px;
-font-weight:800;
+  height:70px;
+  min-width:240px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:0 24px;
+  font-size:20px;
+  font-weight:800;
 }
 
-.btn-call{background:var(--yellow);}
-.btn-wa{background:var(--green);color:white;}
+.btn-call{
+  background:var(--yellow);
+  color:#15202d;
+}
+
+.btn-wa{
+  background:var(--green);
+  color:#fff;
+}
 
 .hero-number{
-color:#dbe2eb;
-margin-top:15px;
+  color:#dbe2eb;
+  font-size:16px;
+  font-weight:500;
+  margin-left:52px;
 }
-
-/* HERO IMAGE */
-
-.hero-right{
-position:relative;
-height:560px;
-}
-
-/* quitamos el rectángulo gris */
-.door-bg{display:none;}
-
-.hero-man{
-position:absolute;
-top:0;
-right:0;
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-/* CARDS */
 
 .cards-wrap{
-position:relative;
-z-index:5;
-margin-top:-56px;
+  position:relative;
+  z-index:5;
+  margin-top:-56px;
 }
 
 .cards{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-border-radius:22px;
-overflow:hidden;
-background:linear-gradient(180deg,#0c2744,#081d32);
-box-shadow:0 16px 40px rgba(0,0,0,.24);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-radius:22px;
+  overflow:hidden;
+  background:linear-gradient(180deg, rgba(12,39,68,.98), rgba(8,29,50,.98));
+  box-shadow:0 16px 40px rgba(0,0,0,.24);
+  border:1px solid rgba(255,255,255,.04);
 }
 
 .card{
-min-height:220px;
-text-align:center;
-color:white;
-padding:30px 26px;
+  min-height:220px;
+  text-align:center;
+  color:#fff;
+  padding:30px 26px 24px;
 }
 
 .card:not(:last-child){
-border-right:1px solid rgba(255,255,255,.07);
+  border-right:1px solid rgba(255,255,255,.07);
 }
 
 .card .icon{
-color:var(--yellow);
-font-size:54px;
-margin-bottom:18px;
+  color:var(--yellow);
+  font-size:54px;
+  margin-bottom:18px;
 }
 
 .card h3{
-font-size:24px;
-margin-bottom:14px;
+  font-size:24px;
+  line-height:1.12;
+  font-weight:800;
+  margin-bottom:14px;
+  letter-spacing:-0.5px;
 }
 
 .card p{
-color:#d9e0e9;
-font-size:15px;
+  color:#d9e0e9;
+  font-size:15px;
+  line-height:1.35;
 }
-
-/* SERVICES */
-
-.services{
-background:#f5f5f6;
-text-align:center;
-padding:88px 0 74px;
-}
-
-.services h2{
-font-size:30px;
-margin-bottom:18px;
-}
-
-.lead{
-max-width:760px;
-margin:auto;
-margin-bottom:36px;
-}
-
-.checks{
-max-width:980px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px 36px;
-}
-
-.check{
-display:flex;
-gap:12px;
-font-size:18px;
-font-weight:700;
-}
-
-/* CTA */
-
-.cta-section{
-background:#071d33;
-padding-bottom:70px;
-}
-
-.cta-box{
-background:#0d2744;
-border-radius:22px;
-padding:40px;
-text-align:center;
-color:white;
-}
-
-.cta-actions{
-display:flex;
-overflow:hidden;
-border-radius:8px;
-margin-top:20px;
-}
-
-.cta-actions a{
-flex:1;
-display:flex;
-align-items:center;
-justify-content:center;
-height:76px;
-font-weight:900;
-}
-
-.call{background:var(--yellow);}
-.wa{background:var(--green);color:white;}
-
-/* FOOTER */
-
-.footer{
-background:#071d33;
-color:white;
-padding:56px 0 110px;
-}
-
-.footer-top{
-display:flex;
-justify-content:space-between;
-margin-bottom:24px;
-}
-
-.footer-nav{
-display:flex;
-gap:40px;
-}
-
-.footer-social{
-display:flex;
-gap:10px;
-}
-
-.footer-line{
-height:1px;
-background:rgba(255,255,255,.12);
-margin-bottom:28px;
-}
-
-.footer-bottom{
-display:grid;
-grid-template-columns:1.1fr .9fr .95fr;
-gap:26px;
-}
-
-.footer-phone{
-display:flex;
-gap:14px;
-}
-
-.footer-info-group{
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-
-.floating-wa{
-position:fixed;
-right:24px;
-bottom:24px;
-width:74px;
-height:74px;
-border-radius:50%;
-background:#16c45f;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:38px;
-}
-
-</style>
+  </style>
 </head>
-
 <body>
 
 <header class="hero-wrap">
+<div class="hero-lines"><span></span></div>
 
 <div class="container hero-top">
-
 <nav class="navbar">
 
-<div class="logo">Cerrajero</div>
+<a href="#" class="logo">
+<span>Cerrajero</span>
+</a>
 
 <div class="nav-center">
-<a>Inicio</a>
-<a>Servicios</a>
-<a>Nosotros</a>
-<a>Contacto</a>
+<a href="#inicio">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#contacto">Contacto</a>
 </div>
 
-<div class="nav-phone">
+<a href="tel:+541112345678" class="nav-phone">
 <i class="fa-solid fa-phone"></i>
-+54 11 1234 5678
-</div>
+<span>+54 11 1234 5678</span>
+</a>
 
 </nav>
 
-<section class="hero">
+<section class="hero" id="inicio">
 
 <div class="hero-left">
 
 <h1>
 Cerrajería Móvil
-<span>24hs</span>
+<span class="yellow">24hs</span>
 </h1>
 
 <p>
@@ -388,12 +347,12 @@ y cambios de cerraduras
 
 <div class="hero-actions">
 
-<a class="btn-call">
+<a href="#" class="btn-call">
 <i class="fa-solid fa-phone"></i>
 Llamar ahora
 </a>
 
-<a class="btn-wa">
+<a href="#" class="btn-wa">
 <i class="fa-brands fa-whatsapp"></i>
 WhatsApp
 </a>
@@ -406,14 +365,7 @@ WhatsApp
 
 </div>
 
-<div class="hero-right">
-
-<img src="img/cerrajero-hero.png" class="hero-man">
-
-</div>
-
 </section>
-
 </div>
 
 <div class="container cards-wrap">
@@ -422,30 +374,29 @@ WhatsApp
 
 <div class="card">
 <div class="icon"><i class="fa-solid fa-key"></i></div>
-<h3>Apertura de puertas</h3>
-<p>Casas, departamentos y oficinas</p>
+<h3>Apertura de<br>puertas</h3>
+<p>Casas, departamentos<br>y oficinas.</p>
 </div>
 
 <div class="card">
 <div class="icon"><i class="fa-solid fa-car-side"></i></div>
-<h3>Apertura de autos</h3>
+<h3>Apertura de<br>autos</h3>
 <p>Sin romper la cerradura</p>
 </div>
 
 <div class="card">
 <div class="icon"><i class="fa-solid fa-lock"></i></div>
-<h3>Cambio de cerraduras</h3>
+<h3>Cambio de<br>cerraduras</h3>
 <p>Instalación y reparación</p>
 </div>
 
 <div class="card">
 <div class="icon"><i class="fa-regular fa-clock"></i></div>
-<h3>Urgencias 24 horas</h3>
+<h3>Urgencias<br>24 horas</h3>
 <p>Atención inmediata</p>
 </div>
 
 </div>
-
 </div>
 
 </header>
