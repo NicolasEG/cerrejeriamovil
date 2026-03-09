@@ -58,303 +58,251 @@
       margin:0 auto;
     }
 
-    /* =========================
+   /* =========================
        HERO
     ========================= */
-    .hero-wrap{
-      position:relative;
-      overflow:hidden;
-      background:
-        radial-gradient(circle at 16% 18%, rgba(26,98,163,.18), transparent 30%),
-        radial-gradient(circle at 86% 12%, rgba(255,255,255,.05), transparent 22%),
-        linear-gradient(90deg, #02101d 0%, #041727 28%, #071d33 60%, #09233f 100%);
-      min-height:870px;
-    }
+.hero-wrap{
+  position:relative;
+  overflow:hidden;
 
-    .hero-wrap::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(90deg,
-          rgba(3,16,29,.95) 0%,
-          rgba(3,16,29,.92) 18%,
-          rgba(3,16,29,.82) 36%,
-          rgba(3,16,29,.55) 52%,
-          rgba(3,16,29,.22) 66%,
-          rgba(3,16,29,0) 78%);
-      z-index:1;
-      pointer-events:none;
-    }
+  /* IMAGEN HERO COMPLETA */
+  background:
+    linear-gradient(90deg,
+      rgba(3,16,29,.95) 0%,
+      rgba(3,16,29,.92) 18%,
+      rgba(3,16,29,.82) 36%,
+      rgba(3,16,29,.55) 52%,
+      rgba(3,16,29,.22) 66%,
+      rgba(3,16,29,0) 78%
+    ),
+    url("img/cerrajero-hero.jpg") right center / cover no-repeat;
 
-    .hero-lines{
-      position:absolute;
-      right:-220px;
-      top:120px;
-      width:980px;
-      height:320px;
-      z-index:0;
-      pointer-events:none;
-      opacity:.42;
-    }
+  min-height:870px;
+}
 
-    .hero-lines::before,
-    .hero-lines::after,
-    .hero-lines span::before,
-    .hero-lines span::after{
-      content:"";
-      position:absolute;
-      right:0;
-      width:820px;
-      height:180px;
-      border-top:5px solid rgba(130,157,191,.28);
-      border-left:0;
-      border-right:0;
-      border-bottom:0;
-      border-radius:220px 0 0 0;
-      transform:skewX(-28deg);
-    }
+.hero-wrap::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(26,98,163,.18), transparent 30%),
+    radial-gradient(circle at 86% 12%, rgba(255,255,255,.05), transparent 22%);
+  z-index:1;
+  pointer-events:none;
+}
 
-    .hero-lines::before{ top:0; }
-    .hero-lines::after{ top:32px; width:860px; }
-    .hero-lines span::before{ top:64px; width:900px; }
-    .hero-lines span::after{ top:96px; width:940px; }
+.hero-lines{
+  position:absolute;
+  right:-220px;
+  top:120px;
+  width:980px;
+  height:320px;
+  z-index:0;
+  pointer-events:none;
+  opacity:.42;
+}
 
-    .hero-top{
-      position:relative;
-      z-index:3;
-      padding-top:28px;
-    }
+.hero-lines::before,
+.hero-lines::after,
+.hero-lines span::before,
+.hero-lines span::after{
+  content:"";
+  position:absolute;
+  right:0;
+  width:820px;
+  height:180px;
+  border-top:5px solid rgba(130,157,191,.28);
+  border-radius:220px 0 0 0;
+  transform:skewX(-28deg);
+}
 
-    .navbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:24px;
-    }
+.hero-lines::before{ top:0; }
+.hero-lines::after{ top:32px; width:860px; }
+.hero-lines span::before{ top:64px; width:900px; }
+.hero-lines span::after{ top:96px; width:940px; }
 
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      color:#fff;
-      font-size:26px;
-      font-weight:800;
-      letter-spacing:-0.5px;
-    }
+.hero-top{
+  position:relative;
+  z-index:3;
+  padding-top:28px;
+}
 
-    .logo-shield{
-      width:30px;
-      height:35px;
-      flex:0 0 30px;
-    }
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
 
-    .nav-center{
-      display:flex;
-      align-items:center;
-      gap:38px;
-      color:#fff;
-      font-size:14px;
-      font-weight:600;
-      margin-left:auto;
-      margin-right:24px;
-    }
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#fff;
+  font-size:26px;
+  font-weight:800;
+  letter-spacing:-0.5px;
+}
 
-    .nav-center a:hover{
-      color:var(--yellow);
-    }
+.logo-shield{
+  width:30px;
+  height:35px;
+  flex:0 0 30px;
+}
 
-    .nav-phone{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      background:var(--yellow);
-      color:#15202d;
-      font-size:14px;
-      font-weight:800;
-      padding:14px 22px;
-      border-radius:8px;
-      box-shadow:0 10px 25px rgba(243,197,56,.18);
-    }
+.nav-center{
+  display:flex;
+  align-items:center;
+  gap:38px;
+  color:#fff;
+  font-size:14px;
+  font-weight:600;
+  margin-left:auto;
+  margin-right:24px;
+}
 
-    .hero{
-      position:relative;
-      z-index:3;
-      min-height:620px;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      align-items:center;
-      padding:46px 0 120px;
-    }
+.nav-center a:hover{
+  color:var(--yellow);
+}
 
-    .hero-left{
-      position:relative;
-      z-index:4;
-      padding-top:18px;
-    }
+.nav-phone{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:var(--yellow);
+  color:#15202d;
+  font-size:14px;
+  font-weight:800;
+  padding:14px 22px;
+  border-radius:8px;
+  box-shadow:0 10px 25px rgba(243,197,56,.18);
+}
 
-    .hero-left h1{
-      color:#fff;
-      font-size:82px;
-      line-height:.94;
-      font-weight:900;
-      letter-spacing:-3px;
-      margin-bottom:24px;
-    }
+.hero{
+  position:relative;
+  z-index:3;
+  min-height:620px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  align-items:center;
+  padding:46px 0 120px;
+}
 
-    .hero-left h1 .yellow{
-      color:var(--yellow);
-      display:block;
-    }
+.hero-left{
+  position:relative;
+  z-index:4;
+  padding-top:18px;
+}
 
-    .hero-left p{
-      color:#fff;
-      font-size:22px;
-      line-height:1.35;
-      font-weight:600;
-      max-width:520px;
-      margin-bottom:32px;
-    }
+.hero-left h1{
+  color:#fff;
+  font-size:82px;
+  line-height:.94;
+  font-weight:900;
+  letter-spacing:-3px;
+  margin-bottom:24px;
+}
 
-    .hero-actions{
-      display:flex;
-      align-items:center;
-      border-radius:10px;
-      overflow:hidden;
-      width:max-content;
-      box-shadow:var(--shadow);
-      margin-bottom:18px;
-    }
+.hero-left h1 .yellow{
+  color:var(--yellow);
+  display:block;
+}
 
-    .btn-call,
-    .btn-wa{
-      height:70px;
-      min-width:240px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
-      padding:0 24px;
-      font-size:20px;
-      font-weight:800;
-    }
+.hero-left p{
+  color:#fff;
+  font-size:22px;
+  line-height:1.35;
+  font-weight:600;
+  max-width:520px;
+  margin-bottom:32px;
+}
 
-    .btn-call{
-      background:var(--yellow);
-      color:#15202d;
-    }
+.hero-actions{
+  display:flex;
+  align-items:center;
+  border-radius:10px;
+  overflow:hidden;
+  width:max-content;
+  box-shadow:var(--shadow);
+  margin-bottom:18px;
+}
 
-    .btn-wa{
-      background:var(--green);
-      color:#fff;
-    }
+.btn-call,
+.btn-wa{
+  height:70px;
+  min-width:240px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:0 24px;
+  font-size:20px;
+  font-weight:800;
+}
 
-    .hero-number{
-      color:#dbe2eb;
-      font-size:16px;
-      font-weight:500;
-      margin-left:52px;
-    }
+.btn-call{
+  background:var(--yellow);
+  color:#15202d;
+}
 
-    .hero-right{
-      position:relative;
-      min-height:560px;
-    }
+.btn-wa{
+  background:var(--green);
+  color:#fff;
+}
 
-    /* FONDO / PUERTA DEL HERO */
-    .door-bg{
-      position:absolute;
-      right:-40px;
-      top:20px;
-      width:760px;
-      height:500px;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,.04), rgba(255,255,255,.02)),
-        url("img/door-bg.jpg") center/cover no-repeat;
-      border-radius:0;
-      z-index:1;
-      opacity:.95;
-      box-shadow:none;
-    }
+.hero-number{
+  color:#dbe2eb;
+  font-size:16px;
+  font-weight:500;
+  margin-left:52px;
+}
 
-    /* Si no usás foto de puerta, este degradado igual ayuda */
-    .door-bg.fallback{
-      background:
-        linear-gradient(90deg, rgba(40,60,85,.35) 0%, rgba(90,110,130,.18) 18%, rgba(255,255,255,.08) 36%, rgba(255,255,255,.05) 55%, rgba(20,29,39,.18) 100%),
-        linear-gradient(180deg, #41546d 0%, #d0d5dc 35%, #eceef2 65%, #c2c8d0 100%);
-    }
+.cards-wrap{
+  position:relative;
+  z-index:5;
+  margin-top:-56px;
+}
 
-    /* IMAGEN DEL CERRAJERO LIBRE, SIN RECUADRO */
-    .hero-man{
-      position:absolute;
-      right:-10px;
-      top:28px;
-      width:690px;
-      max-width:none;
-      height:auto;
-      z-index:2;
-      object-fit:contain;
-      filter:drop-shadow(0 18px 25px rgba(0,0,0,.22));
-      pointer-events:none;
-    }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-radius:22px;
+  overflow:hidden;
+  background:linear-gradient(180deg, rgba(12,39,68,.98), rgba(8,29,50,.98));
+  box-shadow:0 16px 40px rgba(0,0,0,.24);
+  border:1px solid rgba(255,255,255,.04);
+}
 
-    .hero-fade{
-      position:absolute;
-      left:-40px;
-      top:0;
-      width:220px;
-      height:100%;
-      background:linear-gradient(90deg, rgba(3,16,29,1) 0%, rgba(3,16,29,.85) 40%, rgba(3,16,29,0) 100%);
-      z-index:3;
-      pointer-events:none;
-    }
+.card{
+  min-height:220px;
+  text-align:center;
+  color:#fff;
+  padding:30px 26px 24px;
+}
 
-    .cards-wrap{
-      position:relative;
-      z-index:5;
-      margin-top:-56px;
-    }
+.card:not(:last-child){
+  border-right:1px solid rgba(255,255,255,.07);
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      border-radius:22px;
-      overflow:hidden;
-      background:linear-gradient(180deg, rgba(12,39,68,.98), rgba(8,29,50,.98));
-      box-shadow:0 16px 40px rgba(0,0,0,.24);
-      border:1px solid rgba(255,255,255,.04);
-    }
+.card .icon{
+  color:var(--yellow);
+  font-size:54px;
+  margin-bottom:18px;
+}
 
-    .card{
-      min-height:220px;
-      text-align:center;
-      color:#fff;
-      padding:30px 26px 24px;
-    }
+.card h3{
+  font-size:24px;
+  line-height:1.12;
+  font-weight:800;
+  margin-bottom:14px;
+  letter-spacing:-0.5px;
+}
 
-    .card:not(:last-child){
-      border-right:1px solid rgba(255,255,255,.07);
-    }
-
-    .card .icon{
-      color:var(--yellow);
-      font-size:54px;
-      margin-bottom:18px;
-    }
-
-    .card h3{
-      font-size:24px;
-      line-height:1.12;
-      font-weight:800;
-      margin-bottom:14px;
-      letter-spacing:-0.5px;
-    }
-
-    .card p{
-      color:#d9e0e9;
-      font-size:15px;
-      line-height:1.35;
-    }
+.card p{
+  color:#d9e0e9;
+  font-size:15px;
+  line-height:1.35;
+}
 
     /* =========================
        SERVICES
@@ -1000,3 +948,4 @@
   </script>
 </body>
 </html>
+
