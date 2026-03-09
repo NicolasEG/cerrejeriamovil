@@ -9,22 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --navy-1:#071726;
-      --navy-2:#0b2033;
-      --navy-3:#0d2740;
-      --navy-4:#123350;
-      --yellow:#f4c63d;
-      --yellow-2:#e8b728;
-      --green:#17b35f;
-      --green-2:#129e53;
+      --bg:#071c2d;
+      --bg2:#0a2236;
+      --bg3:#0d2c45;
+      --yellow:#f1c443;
+      --yellow2:#e7b628;
+      --green:#14b45f;
+      --green2:#0ea552;
       --white:#ffffff;
-      --text:#101722;
-      --muted:#6b7684;
+      --text:#17202a;
+      --muted:#6c7886;
       --light:#f7f7f9;
-      --card-shadow:0 18px 46px rgba(5,16,29,.16);
-      --radius-xl:28px;
-      --radius-lg:22px;
-      --radius-md:16px;
+      --card:#0b2740;
+      --card2:#0a2338;
+      --shadow:0 18px 48px rgba(5,19,31,.18);
       --container:1180px;
     }
 
@@ -45,12 +43,12 @@
       margin-inline:auto;
     }
 
-    .site-header{
+    .header{
       position:absolute;
       top:0;
       left:0;
       width:100%;
-      z-index:20;
+      z-index:50;
       padding-top:18px;
     }
 
@@ -61,66 +59,66 @@
       gap:24px;
     }
 
-    .brand{
+    .logo{
       display:flex;
       align-items:center;
       gap:12px;
       color:#fff;
+      font-size:1.1rem;
       font-weight:800;
-      font-size:1.35rem;
       letter-spacing:-.03em;
     }
 
-    .brand-mark{
-      width:34px;
-      height:34px;
-      border-radius:12px;
+    .logo-badge{
+      width:38px;
+      height:38px;
+      border-radius:14px;
+      background:linear-gradient(180deg,var(--yellow),var(--yellow2));
+      color:#102132;
       display:grid;
       place-items:center;
-      background:linear-gradient(180deg,#f8cf57,#e1ae1c);
-      color:#0c1622;
-      box-shadow:0 10px 28px rgba(244,198,61,.35);
+      box-shadow:0 10px 26px rgba(241,196,67,.26);
       font-size:1rem;
     }
 
-    .nav-menu{
+    .nav-links{
       display:flex;
       align-items:center;
       gap:34px;
-      color:rgba(255,255,255,.95);
-      font-size:.92rem;
+      color:#fff;
+      font-size:.95rem;
       font-weight:700;
       margin-left:auto;
-      margin-right:18px;
+      margin-right:22px;
     }
 
-    .nav-menu a{opacity:.92}
-    .nav-menu a:hover{opacity:1}
+    .nav-links a{opacity:.96}
+    .nav-links a:hover{opacity:1}
 
-    .top-call{
-      background:linear-gradient(180deg,var(--yellow),var(--yellow-2));
-      color:#161616;
-      height:50px;
-      padding:0 22px;
+    .phone-top{
+      min-width:194px;
+      height:54px;
+      padding:0 20px;
       border-radius:8px;
-      display:inline-flex;
+      background:linear-gradient(180deg,var(--yellow),var(--yellow2));
+      color:#111;
+      display:flex;
       align-items:center;
+      justify-content:center;
       gap:10px;
       font-weight:800;
-      box-shadow:0 12px 26px rgba(244,198,61,.28);
+      box-shadow:0 12px 26px rgba(241,196,67,.25);
       white-space:nowrap;
-      font-size:.98rem;
     }
 
-    .menu-toggle{display:none}
+    .menu-btn{display:none}
 
     .hero{
       position:relative;
+      min-height:706px;
       background:
-        linear-gradient(90deg, rgba(4,16,28,.95) 0%, rgba(5,19,33,.94) 26%, rgba(6,26,45,.82) 48%, rgba(7,23,38,.42) 100%),
-        url('https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=1600&q=80') center right/cover no-repeat;
-      min-height:760px;
-      padding-top:110px;
+        linear-gradient(90deg, rgba(4,18,31,.97) 0%, rgba(6,23,38,.96) 26%, rgba(7,26,44,.86) 50%, rgba(7,26,44,.34) 100%),
+        url('https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=1600&q=80') right center/cover no-repeat;
       overflow:hidden;
     }
 
@@ -129,33 +127,34 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 12% 18%, rgba(66,140,220,.20), transparent 30%),
-        radial-gradient(circle at 70% 20%, rgba(100,180,255,.15), transparent 24%),
-        radial-gradient(circle at 10% 78%, rgba(244,198,61,.10), transparent 26%);
+        radial-gradient(circle at 18% 18%, rgba(35,100,170,.22), transparent 28%),
+        radial-gradient(circle at 72% 22%, rgba(35,100,170,.18), transparent 24%),
+        radial-gradient(circle at 10% 76%, rgba(241,196,67,.08), transparent 20%);
       pointer-events:none;
     }
 
     .hero-inner{
       position:relative;
       z-index:2;
+      min-height:706px;
       display:flex;
       align-items:flex-start;
       justify-content:flex-start;
-      min-height:560px;
-      padding-top:58px;
+      padding-top:150px;
     }
 
     .hero-copy{
-      max-width:540px;
       color:#fff;
+      max-width:470px;
+      padding-left:6px;
     }
 
     .hero-copy h1{
-      font-size:4.45rem;
-      line-height:.94;
-      letter-spacing:-.065em;
+      font-size:4.55rem;
+      line-height:.93;
+      letter-spacing:-.07em;
       font-weight:900;
-      margin-bottom:18px;
+      margin-bottom:16px;
     }
 
     .hero-copy h1 span{
@@ -164,129 +163,120 @@
     }
 
     .hero-copy p{
+      max-width:350px;
       font-size:1rem;
       line-height:1.35;
-      color:rgba(255,255,255,.93);
       font-weight:600;
-      max-width:370px;
+      color:rgba(255,255,255,.95);
       margin-bottom:28px;
     }
 
     .hero-actions{
+      width:fit-content;
       display:flex;
       align-items:center;
-      gap:0;
-      margin-bottom:14px;
-      width:fit-content;
-      box-shadow:0 12px 30px rgba(0,0,0,.18);
       border-radius:8px;
       overflow:hidden;
+      box-shadow:0 14px 28px rgba(0,0,0,.18);
     }
 
-    .btn-call,
-    .btn-wa{
-      min-width:230px;
+    .hero-actions a{
+      width:228px;
       height:58px;
-      display:inline-flex;
+      display:flex;
       align-items:center;
       justify-content:center;
-      gap:12px;
-      font-weight:800;
+      gap:10px;
       font-size:1.1rem;
+      font-weight:800;
       letter-spacing:-.02em;
     }
 
-    .btn-call{
-      background:linear-gradient(180deg,var(--yellow),var(--yellow-2));
-      color:#111;
-    }
+    .btn-call{background:linear-gradient(180deg,var(--yellow),var(--yellow2));color:#111}
+    .btn-wa{background:linear-gradient(180deg,var(--green),var(--green2));color:#fff}
 
-    .btn-wa{
-      background:linear-gradient(180deg,var(--green),var(--green-2));
-      color:#fff;
-    }
-
-    .hero-phone{
+    .hero-number{
+      margin-top:14px;
       margin-left:28px;
       color:rgba(255,255,255,.9);
       font-size:.92rem;
       font-weight:700;
     }
 
-    .services-floating{
+    .services-float{
       position:relative;
-      z-index:5;
-      margin-top:-82px;
+      z-index:10;
+      margin-top:-66px;
     }
 
-    .services-row{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      background:linear-gradient(180deg,#0d2a43,#0a2238);
+    .services-grid{
+      background:linear-gradient(180deg,#0c2942,#0a2237);
       border-radius:18px;
       overflow:hidden;
-      box-shadow:0 26px 40px rgba(8,20,33,.16);
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      box-shadow:0 24px 42px rgba(9,20,34,.18);
     }
 
-    .service{
-      min-height:190px;
-      padding:32px 22px 24px;
+    .service-card{
+      min-height:198px;
+      padding:34px 24px 26px;
+      border-right:1px solid rgba(255,255,255,.08);
       text-align:center;
       color:#fff;
-      border-right:1px solid rgba(255,255,255,.08);
       display:flex;
       flex-direction:column;
       align-items:center;
       justify-content:flex-start;
     }
 
-    .service:last-child{border-right:none}
+    .service-card:last-child{border-right:none}
 
-    .service .icon{
+    .service-icon{
       color:var(--yellow);
       font-size:3.25rem;
       line-height:1;
-      margin-bottom:16px;
-      font-weight:900;
+      margin-bottom:18px;
     }
 
-    .service h3{
+    .service-card h3{
       font-size:1.15rem;
       line-height:1.1;
       letter-spacing:-.03em;
       font-weight:900;
+      max-width:170px;
       margin-bottom:10px;
-      max-width:160px;
     }
 
-    .service p{
-      color:rgba(255,255,255,.86);
+    .service-card p{
+      max-width:180px;
+      color:rgba(255,255,255,.88);
       font-size:.88rem;
       line-height:1.35;
-      max-width:180px;
+      font-weight:500;
     }
 
-    .info-section{
-      background:#f6f6f8;
-      padding:70px 0 44px;
+    .info{
+      padding:72px 0 44px;
       text-align:center;
+      background:#f7f7f9;
     }
 
-    .info-section h2{
-      font-size:2.25rem;
+    .info h2{
+      font-size:2.15rem;
       line-height:1.05;
-      letter-spacing:-.05em;
+      letter-spacing:-.055em;
       font-weight:900;
-      color:#17202b;
+      color:#1a2430;
       margin-bottom:18px;
     }
 
-    .info-section .desc{
-      color:#545e6a;
+    .info .desc{
       max-width:620px;
       margin:0 auto;
-      font-size:.98rem;
-      line-height:1.45;
+      color:#5a6673;
+      font-size:.99rem;
+      line-height:1.5;
       font-weight:500;
     }
 
@@ -294,54 +284,53 @@
       margin-top:34px;
       display:grid;
       grid-template-columns:repeat(3, auto);
-      gap:18px 42px;
       justify-content:center;
-      align-items:center;
+      gap:18px 42px;
     }
 
     .benefit{
       display:flex;
       align-items:center;
       gap:10px;
-      color:#212a35;
-      font-weight:800;
       font-size:1rem;
+      color:#1e2732;
+      font-weight:800;
       white-space:nowrap;
     }
 
-    .benefit .check{
+    .benefit-dot{
       width:20px;
       height:20px;
       border-radius:50%;
-      background:#d9f0c9;
-      color:#6ba544;
+      background:#dceecb;
+      color:#6aa541;
       display:grid;
       place-items:center;
-      font-size:.82rem;
+      font-size:.8rem;
       font-weight:900;
       flex:0 0 20px;
     }
 
     .cta-section{
-      background:linear-gradient(180deg,#0a2238 0%, #071726 100%);
-      padding:42px 0 72px;
+      background:linear-gradient(180deg,#0a2237,#071b2c);
+      padding:40px 0 74px;
     }
 
     .cta-box{
-      background:
-        radial-gradient(circle at 20% 20%, rgba(44,116,191,.18), transparent 28%),
-        linear-gradient(180deg,#0d2842,#091f33);
-      border-radius:18px;
-      padding:36px 26px 22px;
-      color:#fff;
-      text-align:center;
-      box-shadow:var(--card-shadow);
       max-width:980px;
       margin:0 auto;
+      border-radius:18px;
+      padding:36px 28px 22px;
+      color:#fff;
+      text-align:center;
+      background:
+        radial-gradient(circle at 15% 18%, rgba(42,109,184,.18), transparent 25%),
+        linear-gradient(180deg,#0d2942,#091f33);
+      box-shadow:var(--shadow);
     }
 
     .cta-box h3{
-      font-size:2.15rem;
+      font-size:2.1rem;
       line-height:1;
       letter-spacing:-.05em;
       font-weight:900;
@@ -349,70 +338,86 @@
     }
 
     .cta-actions{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      border-radius:8px;
-      overflow:hidden;
       width:fit-content;
       margin:0 auto 14px;
-      box-shadow:0 12px 30px rgba(0,0,0,.18);
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      border-radius:8px;
+      box-shadow:0 14px 28px rgba(0,0,0,.18);
     }
 
     .cta-actions a{
       width:320px;
-      max-width:42vw;
       height:58px;
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:12px;
+      gap:10px;
       font-size:1rem;
       font-weight:800;
     }
 
-    .cta-actions .call{background:linear-gradient(180deg,var(--yellow),var(--yellow-2));color:#111}
-    .cta-actions .wa{background:linear-gradient(180deg,var(--green),var(--green-2));color:#fff}
+    .cta-actions .call{background:linear-gradient(180deg,var(--yellow),var(--yellow2));color:#111}
+    .cta-actions .wa{background:linear-gradient(180deg,var(--green),var(--green2));color:#fff}
 
     .cta-number{
+      color:rgba(255,255,255,.92);
       font-size:.92rem;
       font-weight:700;
-      color:rgba(255,255,255,.9);
     }
 
     .footer{
-      background:linear-gradient(180deg,#092038 0%, #071726 100%);
+      background:linear-gradient(180deg,#09223a 0%, #071b2c 100%);
       color:#fff;
-      padding:26px 0 132px;
+      padding:28px 0 126px;
       position:relative;
+    }
+
+    .footer-top{
+      display:flex;
+      justify-content:flex-end;
+      gap:10px;
+      margin-bottom:12px;
+    }
+
+    .social{
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.22);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-size:.8rem;
+      opacity:.95;
     }
 
     .footer-main{
       display:grid;
-      grid-template-columns:1.1fr .9fr 1.1fr 1.1fr;
-      gap:24px;
-      align-items:start;
-      padding-top:8px;
-      padding-bottom:24px;
-      border-bottom:1px solid rgba(255,255,255,.10);
+      grid-template-columns:1.15fr .95fr .95fr .95fr;
+      gap:22px;
+      padding:8px 0 24px;
+      border-top:1px solid rgba(255,255,255,.10);
     }
 
-    .footer-brand .brand{font-size:1.25rem}
-    .footer-brand .footer-phone{
+    .footer-brand{
+      padding-top:16px;
+    }
+
+    .footer-phone{
       display:flex;
       align-items:center;
       gap:12px;
-      color:#fff;
+      margin-top:44px;
       font-size:1.15rem;
       font-weight:700;
-      margin-top:50px;
+      color:#fff;
     }
 
     .footer-nav,
     .footer-contact,
-    .footer-location{
-      padding-top:18px;
-    }
+    .footer-location{padding-top:16px}
 
     .footer-nav ul,
     .footer-contact ul,
@@ -420,7 +425,7 @@
       list-style:none;
       display:grid;
       gap:12px;
-      color:rgba(255,255,255,.88);
+      color:rgba(255,255,255,.9);
       font-size:.96rem;
       font-weight:600;
     }
@@ -428,72 +433,47 @@
     .footer-nav ul{
       grid-template-columns:repeat(4, auto);
       gap:26px;
-      align-items:center;
     }
 
-    .footer-contact li,
-    .footer-location li{
+    .footer-row{
       display:flex;
       align-items:flex-start;
       gap:10px;
     }
 
-    .footer-icon{
-      color:var(--yellow);
+    .footer-ico{
       width:18px;
+      color:var(--yellow);
       flex:0 0 18px;
       text-align:center;
       margin-top:1px;
     }
 
-    .footer-social{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      justify-content:flex-end;
-      margin-top:-4px;
-      margin-bottom:18px;
-    }
-
-    .social{
-      width:28px;
-      height:28px;
-      border-radius:50%;
-      border:1px solid rgba(255,255,255,.25);
-      display:grid;
-      place-items:center;
-      color:#fff;
-      font-size:.82rem;
-      opacity:.95;
-    }
-
-    .whatsapp-float{
+    .wa-float{
       position:fixed;
       right:22px;
       bottom:22px;
       width:66px;
       height:66px;
       border-radius:50%;
-      background:linear-gradient(180deg,#1ecf6e,#119d53);
+      background:linear-gradient(180deg,#1fd370,#109f53);
+      color:#fff;
       display:grid;
       place-items:center;
-      color:#fff;
-      font-size:1.7rem;
-      box-shadow:0 18px 38px rgba(20,168,84,.36);
-      z-index:50;
+      font-size:1.8rem;
+      box-shadow:0 18px 36px rgba(16,159,83,.36);
+      z-index:80;
     }
 
     @media (max-width: 1080px){
-      .hero-copy h1{font-size:3.75rem}
-      .services-row{grid-template-columns:repeat(2,1fr)}
+      .hero-copy h1{font-size:3.8rem}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
       .footer-main{grid-template-columns:1fr 1fr}
-      .footer-social{justify-content:flex-start}
+      .footer-nav ul{grid-template-columns:1fr 1fr}
     }
 
-    @media (max-width: 820px){
-      .site-header{padding-top:12px}
-      .nav{position:relative;align-items:center}
-      .menu-toggle{
+    @media (max-width: 860px){
+      .menu-btn{
         display:inline-flex;
         width:46px;
         height:46px;
@@ -503,72 +483,73 @@
         color:#fff;
         font-size:1.2rem;
       }
-      .nav-menu{
+
+      .nav-links{
         display:none;
         position:absolute;
-        top:62px;
-        left:0;
-        right:0;
-        background:#0a2033;
-        border-radius:16px;
+        top:68px;
+        left:20px;
+        right:20px;
+        margin:0;
         padding:16px;
+        border-radius:16px;
+        background:#0a2033;
         flex-direction:column;
         align-items:flex-start;
         gap:14px;
-        margin:0;
       }
-      .nav-menu.open{display:flex}
-      .top-call{display:none}
-      .hero{min-height:auto;padding-top:92px;background-position:76% center}
-      .hero-inner{padding-top:36px;min-height:auto;padding-bottom:130px}
+
+      .nav-links.open{display:flex}
+      .phone-top{display:none}
+      .hero{min-height:auto;background-position:72% center}
+      .hero-inner{min-height:auto;padding-top:120px;padding-bottom:120px}
       .hero-copy h1{font-size:3rem}
-      .hero-actions{flex-direction:column;width:100%;border-radius:0;box-shadow:none;overflow:visible;gap:12px}
-      .btn-call,.btn-wa{min-width:100%;border-radius:10px}
-      .hero-phone{margin-left:0}
-      .services-floating{margin-top:-90px}
-      .benefits{grid-template-columns:1fr 1fr;gap:16px 18px}
-      .cta-actions{flex-direction:column;border-radius:0;overflow:visible;gap:12px;box-shadow:none}
-      .cta-actions a{width:100%;max-width:100%;border-radius:10px}
-      .footer-main{grid-template-columns:1fr}
-      .footer-nav ul{grid-template-columns:1fr 1fr}
+      .hero-actions,
+      .cta-actions{flex-direction:column;overflow:visible;box-shadow:none;gap:12px;background:none}
+      .hero-actions a,
+      .cta-actions a{width:100%;border-radius:8px}
+      .hero-actions{width:100%}
+      .cta-actions{width:100%}
+      .hero-number{margin-left:0}
+      .benefits{grid-template-columns:1fr 1fr;gap:16px 20px}
     }
 
     @media (max-width: 580px){
       .container{width:min(var(--container), calc(100% - 24px))}
-      .brand{font-size:1.18rem}
-      .brand-mark{width:30px;height:30px;border-radius:10px}
-      .hero{background-position:70% center}
-      .hero-inner{padding-top:24px}
-      .hero-copy{max-width:100%}
-      .hero-copy h1{font-size:2.55rem}
-      .hero-copy p{max-width:260px;font-size:.95rem}
-      .services-row{grid-template-columns:1fr}
-      .service{min-height:auto}
-      .info-section{padding:56px 0 36px}
-      .info-section h2{font-size:1.95rem}
+      .hero{background-position:68% center}
+      .hero-inner{padding-top:104px;padding-bottom:112px}
+      .hero-copy h1{font-size:2.6rem}
+      .hero-copy p{max-width:280px}
+      .services-float{margin-top:-52px}
+      .services-grid{grid-template-columns:1fr}
+      .service-card{min-height:auto}
+      .info{padding:62px 0 38px}
+      .info h2{font-size:1.9rem}
       .benefits{grid-template-columns:1fr}
       .cta-box h3{font-size:1.7rem}
+      .footer-main{grid-template-columns:1fr}
       .footer-nav ul{grid-template-columns:1fr}
+      .footer-top{justify-content:flex-start}
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="header">
     <div class="container nav">
-      <a href="#inicio" class="brand">
-        <span class="brand-mark">🛡️</span>
+      <a href="#inicio" class="logo">
+        <span class="logo-badge">🛡️</span>
         <span>Cerrajero</span>
       </a>
 
-      <nav class="nav-menu" id="navMenu">
+      <nav class="nav-links" id="navLinks">
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Services</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
       </nav>
 
-      <a class="top-call" href="tel:+541112345678">📞 +54 11 1234 5678</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+      <a href="tel:+541112345678" class="phone-top">📞 +54 11 1234 5678</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
     </div>
   </header>
 
@@ -583,50 +564,50 @@
           <a href="https://wa.me/541112345678" class="btn-wa" target="_blank" rel="noopener">🟢 WhatsApp</a>
         </div>
 
-        <div class="hero-phone">+54 11 1234 5678</div>
+        <div class="hero-number">+54 11 1234 5678</div>
       </div>
     </div>
   </section>
 
-  <section class="services-floating container" id="servicios">
-    <div class="services-row">
-      <article class="service">
-        <div class="icon">🔑</div>
+  <section class="services-float container" id="servicios">
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-icon">🔑</div>
         <h3>Apertura de puertas</h3>
         <p>Casas, departamentos y oficinas.</p>
       </article>
 
-      <article class="service">
-        <div class="icon">🚗</div>
+      <article class="service-card">
+        <div class="service-icon">🚗</div>
         <h3>Apertura de autos</h3>
         <p>Sin romper la cerradura</p>
       </article>
 
-      <article class="service">
-        <div class="icon">🔒</div>
+      <article class="service-card">
+        <div class="service-icon">🔒</div>
         <h3>Cambio de cerraduras</h3>
         <p>Instalación y reparación</p>
       </article>
 
-      <article class="service">
-        <div class="icon">🕘</div>
+      <article class="service-card">
+        <div class="service-icon">🕘</div>
         <h3>Urgencias 24 horas</h3>
         <p>Atención inmediata</p>
       </article>
     </div>
   </section>
 
-  <section class="info-section" id="nosotros">
+  <section class="info" id="nosotros">
     <div class="container">
       <h2>Servicios de Cerrajería Profesional a Domicilio</h2>
       <p class="desc">Brindamos un servicio rápido, confiable y garantizado en cualquier momento del día o de la noche.</p>
 
       <div class="benefits">
-        <div class="benefit"><span class="check">✓</span><span>Atención rápida</span></div>
-        <div class="benefit"><span class="check">✓</span><span>Más de 10 años de experiencia</span></div>
-        <div class="benefit"><span class="check">✓</span><span>Servicio a domicilio</span></div>
-        <div class="benefit"><span class="check">✓</span><span>Trabajo garantizado</span></div>
-        <div class="benefit"><span class="check">✓</span><span>Trabajo garantizado</span></div>
+        <div class="benefit"><span class="benefit-dot">✓</span><span>Atención rápida</span></div>
+        <div class="benefit"><span class="benefit-dot">✓</span><span>Más de 10 años de experiencia</span></div>
+        <div class="benefit"><span class="benefit-dot">✓</span><span>Servicio a domicilio</span></div>
+        <div class="benefit"><span class="benefit-dot">✓</span><span>Trabajo garantizado</span></div>
+        <div class="benefit"><span class="benefit-dot">✓</span><span>Trabajo garantizado</span></div>
       </div>
     </div>
   </section>
@@ -637,8 +618,8 @@
         <h3>¿Necesitas ayuda urgente? ¡Llámanos ahora!</h3>
 
         <div class="cta-actions">
-          <a class="call" href="tel:+541112345678">📞 Llamar ahora</a>
-          <a class="wa" href="https://wa.me/541112345678" target="_blank" rel="noopener">🟢 WhatsApp</a>
+          <a href="tel:+541112345678" class="call">📞 Llamar ahora</a>
+          <a href="https://wa.me/541112345678" class="wa" target="_blank" rel="noopener">🟢 WhatsApp</a>
         </div>
 
         <div class="cta-number">+54 11 1234 5678</div>
@@ -648,19 +629,19 @@
 
   <footer class="footer" id="contacto">
     <div class="container">
-      <div class="footer-social">
+      <div class="footer-top">
         <span class="social">t</span>
         <span class="social">f</span>
         <span class="social">◼</span>
-        <span class="social">📷</span>
+        <span class="social">◔</span>
         <span class="social">◌</span>
         <span class="social">➤</span>
       </div>
 
       <div class="footer-main">
         <div class="footer-brand">
-          <a href="#inicio" class="brand">
-            <span class="brand-mark">🛡️</span>
+          <a href="#inicio" class="logo">
+            <span class="logo-badge">🛡️</span>
             <span>Cerrajero</span>
           </a>
 
@@ -681,33 +662,33 @@
 
         <div class="footer-contact">
           <ul>
-            <li><span class="footer-icon">📞</span><span>2893469</span></li>
-            <li><span class="footer-icon">✉️</span><span>info@cerrajeromovil.com</span></li>
+            <li class="footer-row"><span class="footer-ico">📞</span><span>2893469</span></li>
+            <li class="footer-row"><span class="footer-ico">✉️</span><span>info@cerrajeromovil.com</span></li>
           </ul>
         </div>
 
         <div class="footer-location">
           <ul>
-            <li><span class="footer-icon">📍</span><span>Ciudad, Buenos Aires</span></li>
-            <li><span class="footer-icon">📍</span><span>Bererdite</span></li>
+            <li class="footer-row"><span class="footer-ico">📍</span><span>Ciudad, Buenos Aires</span></li>
+            <li class="footer-row"><span class="footer-ico">📍</span><span>Bererdite</span></li>
           </ul>
         </div>
       </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/541112345678" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+  <a href="https://wa.me/541112345678" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
 
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
     });
 
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navMenu.classList.remove('open'));
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
   </script>
 </body>
